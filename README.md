@@ -18,16 +18,3 @@ To test locally with the Azure Storage emulator, you will need the following `lo
   }
 }
 ```
-
-To build the docker image, in same folder as `dockerfile` enter:
-
-```
-docker build -t serverlessfuncs:v1
-```
-
-And to run it
-
-```
-$connStr = az storage account show-connection-string -g myResGrp -n myStorageAccount -o tsv
-docker run -e AzureWebJobsStorage=$connStr -p 3001:80 serverlessfuncs:v1
-```
