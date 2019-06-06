@@ -15,7 +15,7 @@ namespace ServerlessFuncs
         {
             await container.CreateIfNotExistsAsync();
             var blob = container.GetBlockBlobReference($"{todo.Id}.txt");
-            await blob.UploadTextAsync($"Created a new task: {todo.TaskDescription}");
+            await blob.UploadTextAsync($"Created new task: {todo.TaskDescription}");
             log.Info($"C# Queue trigger function processed: {todo.TaskDescription}");
         }
     }
